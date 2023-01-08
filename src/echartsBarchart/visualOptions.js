@@ -23,6 +23,19 @@ export const visualOptions = {
     default: 120,
     group: 'artboard',
   },
+  barWidth: {
+    type: 'number',
+    label: 'Bar Width',
+    default: 80,
+    group: 'artboard',
+  },
+
+  // stack: {
+  //   type: 'string',
+  //   label: 'Stack',
+  //   default: 'All',
+  //   group: 'artboard',
+  // },
   // orientation: {
   //   type: 'text',
   //   label: 'Orientation',
@@ -43,6 +56,27 @@ export const visualOptions = {
     group: 'Tooltip',
     disabled: {
       showTooltip: false,
+    },
+  },
+  label: {
+    type: 'boolean',
+    label: 'Show label',
+    default: true,
+    group: 'Label',
+  },
+  legend: {
+    type: 'boolean',
+    label: 'Show legend',
+    default: false,
+    group: 'artboard',
+  },
+  legendHoverLink: {
+    type: 'boolean',
+    label: 'Show legend hover link ',
+    default: false,
+    group: 'artboard',
+    disabled: {
+      legend: false,
     },
   },
 }
