@@ -27,15 +27,15 @@ export const visualOptions = {
     type: 'number',
     label: 'Bar Width',
     default: 80,
-    group: 'artboard',
+    group: 'Chart',
   },
 
-  // stack: {
-  //   type: 'string',
-  //   label: 'Stack',
-  //   default: 'All',
-  //   group: 'artboard',
-  // },
+  stack: {
+    type: 'boolean',
+    label: 'Stack lines',
+    default: false,
+    group: 'Chart',
+  },
   // orientation: {
   //   type: 'text',
   //   label: 'Orientation',
@@ -62,21 +62,22 @@ export const visualOptions = {
     type: 'boolean',
     label: 'Show label',
     default: true,
-    group: 'Label',
+    group: 'Chart',
   },
-  legend: {
-    type: 'boolean',
-    label: 'Show legend',
-    default: false,
-    group: 'artboard',
-  },
-  legendHoverLink: {
-    type: 'boolean',
-    label: 'Show legend hover link ',
-    default: false,
-    group: 'artboard',
-    disabled: {
-      legend: false,
-    },
-  },
+  // legend: {
+  //   type: 'boolean',
+  //   label: 'Show legend',
+  //   default: false,
+  //   group: 'Chart',
+  // },
+
+  // legendHoverLink: {
+  //   type: 'boolean',
+  //   label: 'Show legend hover link ',
+  //   default: false,
+  //   group: 'Chart',
+  //   disabled: {
+  //     legend: false,
+  //   },
+  // },
 }

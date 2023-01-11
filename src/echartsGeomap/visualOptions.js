@@ -23,6 +23,31 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
+  roam: {
+    type: 'text',
+    label: 'Roam',
+    group: 'artboard',
+    // default: 1,
+    // min: 1,
+    options: ['none', 'scale', 'move', 'both'],
+    default: 'none',
+  },
+  scaleLimitMin: {
+    type: 'number',
+    label: 'Min',
+    group: 'Scale limit',
+    // default: 1,
+
+    default: 1,
+  },
+  scaleLimitMax: {
+    type: 'number',
+    label: 'Max',
+    group: 'Scale limit',
+    // default: 1,
+
+    default: 1,
+  },
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',
