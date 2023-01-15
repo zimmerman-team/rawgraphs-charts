@@ -23,6 +23,13 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
+  nodeClick: {
+    type: 'text',
+    label: 'Node click',
+    group: 'artboard',
+    options: ['false', 'zoomToNode', 'link'],
+    default: 'link',
+  },
   showLabels: {
     type: 'boolean',
     label: 'Show labels',
@@ -35,6 +42,13 @@ export const visualOptions = {
     default: true,
     group: 'labels',
   },
+  upperLabel: {
+    type: 'boolean',
+    label: 'Show upper label',
+    default: true,
+    group: 'labels',
+  },
+
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',

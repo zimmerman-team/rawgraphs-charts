@@ -44,6 +44,14 @@ export const visualOptions = {
     max: 1,
     group: 'chart',
   },
+  draggable: {
+    type: 'boolean',
+    label: 'Draggable',
+    group: 'chart',
+
+    default: false,
+  },
+
   orient: {
     type: 'text',
     label: 'Orientation',
@@ -57,6 +65,12 @@ export const visualOptions = {
     group: 'chart',
     options: ['left', 'right', 'justify'],
     default: 'justify',
+  },
+  showEdgeLabels: {
+    type: 'boolean',
+    label: 'Show edge labels',
+    default: true,
+    group: 'Labels',
   },
   showLabels: {
     type: 'boolean',
