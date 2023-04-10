@@ -77,7 +77,7 @@ export const visualOptions = {
   isMonetaryValue: {
     type: 'boolean',
     label: 'Is monetary value?',
-    default: true,
+    default: false,
     group: 'Tooltip',
     disabled: {
       showTooltip: false,
