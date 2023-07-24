@@ -1,4 +1,17 @@
 export const visualOptions = {
+  width: {
+    type: 'number',
+    label: 'Width (px)',
+    default: 0,
+    group: 'artboard',
+  },
+  height: {
+    type: 'number',
+    label: 'Height (px)',
+    default: 0,
+    group: 'artboard',
+  },
+
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
@@ -23,10 +36,18 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
+ 
+  background: {
+    type: 'color',
+    label: 'Background',
+    default: '#FEFEFE',
+    group: 'artboard',
+  },
+  
   roam: {
     type: 'text',
     label: 'Roam',
-    group: 'artboard',
+    group: 'chart',
     // default: 1,
     // min: 1,
     options: ['none', 'scale', 'move', 'both'],
@@ -63,4 +84,16 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
+  palette:{
+    type: 'checkbox',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: {
+      "TGF Default": true,
+      "Nordic Aurora": false,
+      "Sunset coast": false,
+      "Warm tone": false,
+      "Sprint forest": false,
+    }
+  }
 }
