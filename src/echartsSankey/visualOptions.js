@@ -2,13 +2,13 @@ export const visualOptions = {
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
-    default: 0,
+    default: 10,
     group: 'artboard',
   },
   marginRight: {
     type: 'number',
     label: 'Margin (right)',
-    default: 100,
+    default: 50,
     group: 'artboard',
   },
   marginBottom: {
@@ -51,7 +51,6 @@ export const visualOptions = {
 
     default: false,
   },
-
   orient: {
     type: 'text',
     label: 'Orientation',

@@ -48,7 +48,6 @@ export const visualOptions = {
     default: true,
     group: 'labels',
   },
-
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',

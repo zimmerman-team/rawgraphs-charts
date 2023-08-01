@@ -2,7 +2,7 @@ export const visualOptions = {
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
-    default: 20,
+    default: 10,
     group: 'artboard',
   },
   marginRight: {
@@ -20,7 +20,7 @@ export const visualOptions = {
   marginLeft: {
     type: 'number',
     label: 'Margin (left)',
-    default: 120,
+    default: 50,
     group: 'artboard',
   },
   barWidth: {
@@ -29,7 +29,6 @@ export const visualOptions = {
     default: 80,
     group: 'Chart',
   },
-
   stack: {
     type: 'boolean',
     label: 'Stack lines',

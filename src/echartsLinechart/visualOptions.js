@@ -2,10 +2,9 @@ export const visualOptions = {
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
-    default: 20,
+    default: 10,
     group: 'artboard',
   },
-
   marginRight: {
     type: 'number',
     label: 'Margin (right)',
@@ -21,7 +20,7 @@ export const visualOptions = {
   marginLeft: {
     type: 'number',
     label: 'Margin (left)',
-    default: 120,
+    default: 50,
     group: 'artboard',
   },
   lineType: {
