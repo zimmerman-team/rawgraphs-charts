@@ -27,7 +27,7 @@ export const visualOptions = {
     type: 'number',
     label: 'Bar Width',
     default: 60,
-    group: 'artboard',
+    group: 'Chart',
   },
   stack: {
     type: 'boolean',
@@ -57,12 +57,12 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
-  // label: {
-  //   type: 'boolean',
-  //   label: 'Show label',
-  //   default: true,
-  //   group: 'Chart',
-  // },
+  label: {
+    type: 'boolean',
+    label: 'Show label',
+    default: true,
+    group: 'Chart',
+  },
   // legend: {
   //   type: 'boolean',
   //   label: 'Show legend',
