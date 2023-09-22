@@ -85,15 +85,9 @@ export const visualOptions = {
     },
   },
   palette:{
-    type: 'checkbox',
+    type: 'radioGroup',
     label: 'TGF Default',
     group: 'Color palette',
-    default: {
-      "TGF Default": true,
-      "Nordic Aurora": false,
-      "Sunset coast": false,
-      "Warm tone": false,
-      "Sprint forest": false,
-    }
+    default: "TGF Default"
   }
 }
