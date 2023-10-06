@@ -3,7 +3,7 @@ export const dimensions = [
     id: 'title',
     name: 'Title',
     validTypes: ['string'],
-    required: true,
+    required: false,
     static: true,
   },
   {
@@ -18,14 +18,14 @@ export const dimensions = [
     id: 'subtitle',
     name: 'Sub Title',
     validTypes: ['string'],
-    required: true,
+    required: false,
     static: true,
   },
   {
     id: 'description',
     name: 'Description',
     validTypes: ['string'],
-    required: true,
+    required: false,
     static: true,
   },
 ]

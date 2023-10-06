@@ -25,9 +25,6 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
   const value = sizeAggregator(data.map((d) => d[mapping.value.value]))
 
   return {
-    title: mapping.title.value,
-    subtitle: mapping.subtitle.value,
-    description: mapping.description.value,
     value: value > 999 ? formatLargeAmountsWithPrefix(value) : value,
   }
 }
