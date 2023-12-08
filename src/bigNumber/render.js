@@ -1,16 +1,16 @@
 export function render(node, data) {
   node.innerHTML = `
-    <div style="min-width: 135px;">
-      <div style="font-size: 9px;text-transform: uppercase;border-bottom: 1px solid #000;padding-bottom: 2px;line-height: 11px;">
+    <div style="width: 317px; font-family:"Gotham Narrow", sans-serif; color: #000;">
+      <div style="font-size: 21.985px;text-transform: uppercase;border-bottom: 1px solid #000;padding-bottom: 10px; font-weight:350;">
         ${data.title ?? ''}
       </div>
-      <div style="font-size: 45px;font-weight: 600;line-height: 54px;margin: 11px 0;">
+      <div style="font-size: 105.527px;font-weight: 600;height: 112px;margin: 26px 0; display: flex; align-items: center;">
         ${data.value ?? 0.00}
       </div>
-      <div style="font-size: 9px;text-transform: uppercase;border-bottom: 1px solid #000;padding-bottom: 2px;line-height: 11px;">
+      <div style="font-size: 21.985px;text-transform: uppercase;border-bottom: 1px solid #000;padding-bottom: 10px; font-weight:350;">
         ${data.subtitle ?? ''}
       </div>
-      <div style="font-size: 8px;line-height: 9px;margin-top: 8px;">
+      <div style="font-size: 17.588px;margin-top: 14px; font-weight:350;">
         ${data.description ?? ''}
       </div>
     </div>
