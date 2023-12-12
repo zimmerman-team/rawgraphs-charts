@@ -45,6 +45,7 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
         const item = {
           source,
           target,
+          value,
         }
         links.push(item)
         return item
