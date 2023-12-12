@@ -33,19 +33,18 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
             id: source,
             name: v[0][category1],
             category: category1,
-            symbolSize: value,
+            value: value,
           },
           {
             id: target,
             name: v[0][category2],
             category: category2,
-            symbolSize: value,
+            value: value,
           }
         )
         const item = {
           source,
           target,
-          value,
         }
         links.push(item)
         return item

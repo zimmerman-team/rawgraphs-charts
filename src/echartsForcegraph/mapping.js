@@ -24,27 +24,28 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
       (v) => {
         const source = category1 + ' - ' + v[0][category1]
         const target = category2 + ' - ' + v[0][category2]
+        const value = mapping.size.value
+          ? sizeAggregator(v.map((d) => d[mapping.size.value]))
+          : v.length
 
         nodes.push(
           {
             id: source,
             name: v[0][category1],
             category: category1,
-            symbolSize: 5,
+            value: value,
           },
           {
             id: target,
             name: v[0][category2],
             category: category2,
-            symbolSize: 5,
+            value: value,
           }
         )
         const item = {
           source,
           target,
-          value: mapping.size.value
-            ? sizeAggregator(v.map((d) => d[mapping.size.value]))
-            : v.length,
+          value,
         }
         links.push(item)
         return item

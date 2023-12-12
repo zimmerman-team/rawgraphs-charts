@@ -34,91 +34,38 @@ export const visualOptions = {
     default: false,
     group: 'artboard',
   },
-
-  legendWidth: {
-    type: 'number',
-    label: 'Legend width',
-    default: 200,
-    group: 'artboard',
-    disabled: {
-      showLegend: false,
-    },
-  },
-
   // chart
 
   drawDonut: {
     type: 'boolean',
     label: 'Draw as donuts',
-    default: false,
+    default: true,
     group: 'chart',
   },
-
-  arcTichkness: {
+  arcThickness: {
     type: 'number',
-    label: 'Donut thickness',
-    default: 10,
+    label: 'Donut thickness percentage',
+    default: 50,
+    max: 100,
+    min: 10,
     group: 'chart',
     disabled: {
       drawDonut: false,
     },
   },
-
-  sortArcsBy: {
-    type: 'text',
-    label: 'Sort arcs by',
-    group: 'series',
-    options: [
-      { label: 'Size (descending)', value: 'totalDescending' },
-      { label: 'Size (ascending)', value: 'totalAscending' },
-      { label: 'Name', value: 'name' },
-      { label: 'Original', value: 'original' },
-    ],
-    default: 'name',
-  },
-
-  // labels
-
-  showSeriesLabels: {
+  showTooltip: {
     type: 'boolean',
-    label: 'Show pies titles',
+    label: 'Show tooltip',
     default: true,
-    group: 'labels',
+    group: 'Tooltip',
   },
-
-  showArcValues: {
+  isMonetaryValue: {
     type: 'boolean',
-    label: 'Show values on arcs',
+    label: 'Is monetary value?',
     default: false,
-    group: 'labels',
-  },
-
-  // series
-
-  sortPiesBy: {
-    type: 'text',
-    label: 'Sort pies by',
-    group: 'series',
-    options: [
-      { label: 'Size (descending)', value: 'totalDescending' },
-      { label: 'Size (ascending)', value: 'totalAscending' },
-      { label: 'Name', value: 'name' },
-      { label: 'Original', value: 'original' },
-    ],
-    default: 'name',
-  },
-
-  columnsNumber: {
-    type: 'number',
-    label: 'Grid columns',
-    default: 0,
-    group: 'series',
-  },
-
-  showGrid: {
-    type: 'boolean',
-    label: 'Show grid',
-    default: false,
-    group: 'series',
+    group: 'Tooltip',
+    disabled: {
+      showTooltip: false,
+    },
   },
 }

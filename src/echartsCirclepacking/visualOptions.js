@@ -27,26 +27,8 @@ export const visualOptions = {
     type: 'text',
     label: 'Node click',
     group: 'artboard',
-    options: ['false', 'zoomToNode', 'link'],
-    default: 'link',
-  },
-  showLabels: {
-    type: 'boolean',
-    label: 'Show labels',
-    default: true,
-    group: 'labels',
-  },
-  showBreadcrumbs: {
-    type: 'boolean',
-    label: 'Show breadcrumbs',
-    default: true,
-    group: 'labels',
-  },
-  upperLabel: {
-    type: 'boolean',
-    label: 'Show upper label',
-    default: true,
-    group: 'labels',
+    options: ['false', 'zoomToNode'],
+    default: 'zoomToNode',
   },
   showTooltip: {
     type: 'boolean',
@@ -62,5 +44,11 @@ export const visualOptions = {
     disabled: {
       showTooltip: false,
     },
+  },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
   },
 }

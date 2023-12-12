@@ -23,30 +23,20 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
-  nodeClick: {
-    type: 'text',
-    label: 'Node click',
-    group: 'artboard',
-    options: ['false', 'zoomToNode', 'link'],
-    default: 'link',
-  },
   showLabels: {
     type: 'boolean',
     label: 'Show labels',
     default: true,
     group: 'labels',
   },
-  showBreadcrumbs: {
-    type: 'boolean',
-    label: 'Show breadcrumbs',
-    default: true,
+  labelFontSize: {
+    type: 'number',
+    label: 'Label font size',
+    default: 12,
     group: 'labels',
-  },
-  upperLabel: {
-    type: 'boolean',
-    label: 'Show upper label',
-    default: true,
-    group: 'labels',
+    disabled: {
+      showLabels: false,
+    },
   },
   showTooltip: {
     type: 'boolean',
