@@ -47,7 +47,7 @@ export const visualOptions = {
   showLabels: {
     type: 'boolean',
     label: 'Show label',
-    default: true,
+    default: false,
     group: 'labels',
   },
   labelFontSize: {
