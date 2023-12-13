@@ -29,6 +29,33 @@ export const visualOptions = {
     default: true,
     group: 'labels',
   },
+  showLabel1: {
+    type: 'boolean',
+    label: 'Layer 1 Label',
+    default: true,
+    group: 'labels',
+    disabled: {
+      showLabels: false,
+    },
+  },
+  showLabel2: {
+    type: 'boolean',
+    label: 'Layer 2 Label',
+    default: true,
+    group: 'labels',
+    disabled: {
+      showLabels: false,
+    },
+  },
+  showLabel3: {
+    type: 'boolean',
+    label: 'Layer 3 Label',
+    default: true,
+    group: 'labels',
+    disabled: {
+      showLabels: false,
+    },
+  },
   labelFontSize: {
     type: 'number',
     label: 'Label font size',
