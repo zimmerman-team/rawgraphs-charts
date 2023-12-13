@@ -26,6 +26,7 @@ export function render(
     // chart options
     stack,
     showLegend,
+    showArea,
   } = visualOptions
 
   const chart = echarts.init(node, null, {
@@ -58,6 +59,7 @@ export function render(
       name: d[0],
       data: d[1].map((l) => l.y),
       stack: stack ? 'Total' : undefined,
+      areaStyle: showArea ? {} : undefined,
     })),
   }
 
