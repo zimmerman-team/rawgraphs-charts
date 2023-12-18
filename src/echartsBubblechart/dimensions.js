@@ -16,8 +16,6 @@ export const dimensions = [
     name: 'Size',
     validTypes: ['number'],
     required: false,
-    aggregation: true,
-    aggregationDefault: 'sum',
   },
   {
     id: 'color',
