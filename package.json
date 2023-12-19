@@ -27,6 +27,7 @@
     "d3-sankey-circular": "^0.34.0",
     "d3-voronoi-treemap": "^1.1.1",
     "echarts": "^5.4.0",
+    "echarts-gl": "^2.0.9",
     "louvain": "^1.2.0"
   },
   "devDependencies": {

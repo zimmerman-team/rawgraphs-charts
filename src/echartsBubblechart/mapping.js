@@ -2,14 +2,6 @@ import * as d3 from 'd3'
 import { getDimensionAggregator } from '@rawgraphs/rawgraphs-core'
 
 export const mapData = function (data, mapping, dataTypes, dimensions) {
-  // define aggregators
-  const sizeAggregator = getDimensionAggregator(
-    'size',
-    mapping,
-    dataTypes,
-    dimensions
-  )
-
   // add the non-compulsory dimensions.
   'color' in mapping ? null : (mapping.color = { value: undefined })
   'size' in mapping ? null : (mapping.size = { value: undefined })
@@ -24,16 +16,15 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
       const colorGroup = v.map((d) => ({
         x: d[mapping.x.value],
         y: d[mapping.y.value],
-        size: mapping.size.value
-          ? sizeAggregator(v.map((d) => d[mapping.size.value]))
-          : v.length,
+        size: mapping.size.value ? d[mapping.size.value] : v.length,
         color,
         label: mapping.label.value ? d[mapping.label.value] : undefined,
       }))
       results[color] = colorGroup
       return colorGroup
     },
-    (d) => (mapping.color.value ? d[mapping.color.value].toString() : undefined) // color grouping. toString() to enable grouping on dates
+    (d) =>
+      mapping.color.value ? d[mapping.color.value]?.toString() : undefined // color grouping. toString() to enable grouping on dates
   )
 
   return results
