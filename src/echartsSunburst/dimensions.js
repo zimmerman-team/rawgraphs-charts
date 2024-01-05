@@ -5,7 +5,7 @@ export const dimensions = [
     validTypes: ['number', 'date', 'string'],
     required: true,
     multiple: true,
-    maxValues: 3,
+    // maxValues: 3,
   },
   {
     id: 'size',
@@ -14,30 +14,5 @@ export const dimensions = [
     required: false,
     aggregation: true,
     aggregationDefault: 'sum',
-  },
-  {
-    id: 'color',
-    name: 'Color',
-    validTypes: ['number', 'date', 'string'],
-    required: false,
-    aggregation: true,
-    aggregationDefault: {
-      number: 'sum',
-      string: 'csvDistinct',
-      date: 'csvDistinct',
-    },
-  },
-  {
-    id: 'label',
-    name: 'Leaf label',
-    validTypes: ['number', 'date', 'string'],
-    required: false,
-    multiple: true,
-    aggregation: true,
-    aggregationDefault: {
-      number: 'sum',
-      string: 'csvDistinct',
-      date: 'csvDistinct',
-    },
   },
 ]
