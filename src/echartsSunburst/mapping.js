@@ -1,21 +1,21 @@
 import * as d3 from 'd3'
 import { getDimensionAggregator } from '@rawgraphs/rawgraphs-core'
 
-function getFormattedItemData(d, depth, maxDepth, path) {
-  const itemPath = `${path}${path.length > 0 ? '/' : ''}${d.data[0]}`
+function getFormattedItemData(d, depth, maxDepth) {
   const itemChildren = d.children
     ? (d.children || []).map((c) => {
-        return getFormattedItemData(c, depth + 1, maxDepth, itemPath)
+        return getFormattedItemData(c, depth + 1, maxDepth)
       })
     : undefined
   const item = {
-    name: d.data[0],
+    name: d.data.name,
     value: d.value,
-    path: itemPath,
+    path: d.data.id,
     children: itemChildren,
   }
   return item
 }
+
 export const mapData = function (data, mapping, dataTypes, dimensions) {
   const sizeAggregator = getDimensionAggregator(
     'size',
@@ -27,36 +27,44 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
   // add the non-compulsory dimensions.
   'size' in mapping ? null : (mapping.size = { value: undefined })
 
-  const results = []
+  const results = [{ id: 'head' }]
 
-  d3.rollups(
-    data,
-    (v) => {
-      const item = {
-        hierarchy: new Map(mapping.hierarchy.value.map((d) => [d, v[0][d]])), //get the first one since it's grouped
-        size: mapping.size.value
-          ? sizeAggregator(v.map((d) => d[mapping.size.value]))
-          : v.length,
-      }
+  const arrangeForStratify = (data, values, parent) => {
+    const newValues = [...values]
 
-      results.push(item)
-      return item
-    },
-    ...mapping.hierarchy.value.map((level) => (d) => d[level]) // create a grouping for each level of the hierarchy
-  )
+    if (values.length > 0) {
+      const value = newValues.shift()
 
-  const nest = d3.rollup(
-    results,
-    (v) => v[0],
-    ...mapping.hierarchy.value.map((level) => (d) => d.hierarchy.get(level))
-  )
+      d3.rollups(
+        data,
+        (v) => {
+          const id = `${parent}${'/'}${v[0][value]}`
+          const item = {
+            size: mapping.size.value
+              ? sizeAggregator(v.map((d) => d[mapping.size.value]))
+              : v.length,
+            id: id,
+            name: v[0][value],
+            parentId: parent,
+            leaf: newValues.length === 0,
+          }
+          arrangeForStratify(v, newValues, id)
+
+          results.push(item)
+          return item
+        },
+        (d) => d[value]
+      )
+    }
+  }
+  arrangeForStratify(data, mapping.hierarchy.value, 'head')
 
   const hierarchy = d3
-    .hierarchy(nest)
-    .sum((d) => (d[1] instanceof Map ? 0 : d[1].size))
+    .stratify()(results)
+    .sum((d) => (d.leaf ? d.size : 0))
 
   const formattedData = hierarchy.children.map((d) =>
-    getFormattedItemData(d, 0, mapping.hierarchy.value.length, '')
+    getFormattedItemData(d, 0, mapping.hierarchy.value.length)
   )
 
   return formattedData

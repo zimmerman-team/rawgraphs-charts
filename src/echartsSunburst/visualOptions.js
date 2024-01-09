@@ -24,37 +24,18 @@ export const visualOptions = {
     group: 'artboard',
   },
   showLabels: {
-    type: 'boolean',
+    type: 'text',
     label: 'Show labels',
-    default: true,
     group: 'labels',
+    options: ['false', 'leaf', 'true'],
+    default: 'leaf',
   },
-  showLabel1: {
-    type: 'boolean',
-    label: 'Layer 1 Label',
-    default: true,
+  leafLabelPositon: {
+    type: 'text',
+    label: 'Leaf label position',
     group: 'labels',
-    disabled: {
-      showLabels: false,
-    },
-  },
-  showLabel2: {
-    type: 'boolean',
-    label: 'Layer 2 Label',
-    default: true,
-    group: 'labels',
-    disabled: {
-      showLabels: false,
-    },
-  },
-  showLabel3: {
-    type: 'boolean',
-    label: 'Layer 3 Label',
-    default: true,
-    group: 'labels',
-    disabled: {
-      showLabels: false,
-    },
+    options: ['inside', 'outside'],
+    default: 'inside',
   },
   labelFontSize: {
     type: 'number',
@@ -79,5 +60,23 @@ export const visualOptions = {
     disabled: {
       showTooltip: false,
     },
+  },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
+  },
+  borderWidth: {
+    type: 'number',
+    label: 'Item Border width',
+    default: 1,
+    group: 'artboard',
+  },
+  borderRadius: {
+    type: 'number',
+    label: 'Item Border radius',
+    default: 0,
+    group: 'artboard',
   },
 }
