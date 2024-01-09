@@ -29,12 +29,6 @@ export const visualOptions = {
     default: true,
     group: 'tooltip',
   },
-  gaussian: {
-    type: 'boolean',
-    label: 'Gaussian',
-    default: false,
-    group: 'chart',
-  },
   isMonetaryValue: {
     type: 'boolean',
     label: 'Is monetary value?',
