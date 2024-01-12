@@ -26,7 +26,7 @@ export const visualOptions = {
   barWidth: {
     type: 'number',
     label: 'Bar Width',
-    default: 60,
+    default: 35,
     group: 'Chart',
   },
   stack: {

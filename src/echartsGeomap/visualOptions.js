@@ -1,10 +1,4 @@
 export const visualOptions = {
-  width: {
-    type: 'number',
-    label: 'Width (px)',
-    default: 0,
-    group: 'artboard',
-  },
   height: {
     type: 'number',
     label: 'Height (px)',
@@ -36,14 +30,14 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
- 
+
   background: {
     type: 'color',
     label: 'Background',
     default: '#FEFEFE',
     group: 'artboard',
   },
-  
+
   roam: {
     type: 'text',
     label: 'Roam',
@@ -84,10 +78,10 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
-  palette:{
+  palette: {
     type: 'radioGroup',
     label: 'TGF Default',
     group: 'Color palette',
-    default: "TGF Default"
-  }
+    default: 'TGF Default',
+  },
 }
