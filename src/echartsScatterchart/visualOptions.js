@@ -20,7 +20,7 @@ export const visualOptions = {
   marginLeft: {
     type: 'number',
     label: 'Margin (left)',
-    default: 50,
+    default: 10,
     group: 'artboard',
   },
   showTooltip: {
