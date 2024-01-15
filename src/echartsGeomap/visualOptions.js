@@ -1,11 +1,4 @@
 export const visualOptions = {
-  height: {
-    type: 'number',
-    label: 'Height (px)',
-    default: 0,
-    group: 'artboard',
-  },
-
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
