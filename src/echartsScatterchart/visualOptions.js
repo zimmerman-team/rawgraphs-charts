@@ -38,4 +38,10 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
+  },
 }

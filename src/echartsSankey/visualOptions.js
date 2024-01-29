@@ -7,8 +7,8 @@ export const visualOptions = {
   },
   marginRight: {
     type: 'number',
-    label: 'Margin (right)',
-    default: 50,
+    label: 'Margin (right) %',
+    default: 5,
     group: 'artboard',
   },
   marginBottom: {
@@ -19,8 +19,8 @@ export const visualOptions = {
   },
   marginLeft: {
     type: 'number',
-    label: 'Margin (left)',
-    default: 0,
+    label: 'Margin (left) %',
+    default: 5,
     group: 'artboard',
   },
   nodesWidth: {

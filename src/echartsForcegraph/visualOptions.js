@@ -40,11 +40,11 @@ export const visualOptions = {
   },
   nodeSize: {
     type: 'number',
-    label: 'Node symbol size (0-10)',
-    default: 5,
+    label: 'Node symbol size (0-20)',
+    default: 10,
     step: 1,
     min: 0,
-    max: 10,
+    max: 20,
     group: 'chart',
   },
   forceRepulsion: {
@@ -56,9 +56,9 @@ export const visualOptions = {
     max: 100,
     group: 'chart',
   },
-  draggable: {
+  roam: {
     type: 'boolean',
-    label: 'Draggable',
+    label: 'Roam',
     group: 'chart',
     default: false,
   },
@@ -91,5 +91,11 @@ export const visualOptions = {
     disabled: {
       showTooltip: false,
     },
+  },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
   },
 }
