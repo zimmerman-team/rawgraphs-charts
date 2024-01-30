@@ -1,6 +1,6 @@
 export function render(node, data) {
   node.innerHTML = `
-    <div style="width: 317px; font-family:"Gotham Narrow", sans-serif; color: #000;">
+    <div style="width: 317px; color: #000;">
       <div style="font-size: 21.985px;text-transform: uppercase;border-bottom: 1px solid #000;padding-bottom: 10px; font-weight:350;">
         ${data.title ?? ''}
       </div>
