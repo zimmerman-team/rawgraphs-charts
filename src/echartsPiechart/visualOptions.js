@@ -39,7 +39,7 @@ export const visualOptions = {
   drawDonut: {
     type: 'boolean',
     label: 'Draw as donuts',
-    default: true,
+    default: false,
     group: 'chart',
   },
   arcThickness: {
@@ -67,5 +67,11 @@ export const visualOptions = {
     disabled: {
       showTooltip: false,
     },
+  },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
   },
 }
