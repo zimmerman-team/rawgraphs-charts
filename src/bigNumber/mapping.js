@@ -17,14 +17,14 @@ export function formatLargeAmountsWithPrefix(n) {
 export const mapData = function (data, mapping, dataTypes, dimensions) {
   // define aggregators
   const sizeAggregator = getDimensionAggregator(
-    'value',
+    'metric',
     mapping,
     dataTypes,
     dimensions
   )
-  const value = sizeAggregator(data.map((d) => d[mapping.value.value]))
+  const value = sizeAggregator(data.map((d) => d[mapping.metric.value]))
 
   return {
-    value: value > 999 ? formatLargeAmountsWithPrefix(value) : value,
+    metric: value > 999 ? formatLargeAmountsWithPrefix(value) : value,
   }
 }
