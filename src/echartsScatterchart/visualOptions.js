@@ -23,6 +23,15 @@ export const visualOptions = {
     default: 10,
     group: 'artboard',
   },
+  symbolSize: {
+    type: 'number',
+    label: 'Symbol size (0-20)',
+    default: 10,
+    step: 1,
+    min: 0,
+    max: 20,
+    group: 'chart',
+  },
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',
