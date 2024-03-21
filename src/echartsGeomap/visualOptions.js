@@ -40,6 +40,12 @@ export const visualOptions = {
     options: ['none', 'scale', 'move', 'both'],
     default: 'none',
   },
+  showAntarctica: {
+    type: 'boolean',
+    label: 'Show Antarctica',
+    default: true,
+    group: 'chart',
+  },
   scaleLimitMin: {
     type: 'number',
     label: 'Min',
