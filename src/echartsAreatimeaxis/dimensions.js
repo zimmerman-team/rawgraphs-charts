@@ -12,5 +12,7 @@ export const dimensions = [
     operation: 'get',
     validTypes: ['number', 'date'],
     required: true,
+    aggregation: true,
+    aggregationDefault: 'sum',
   },
 ]
