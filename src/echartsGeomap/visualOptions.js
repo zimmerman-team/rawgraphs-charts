@@ -43,7 +43,7 @@ export const visualOptions = {
   showAntarctica: {
     type: 'boolean',
     label: 'Show Antarctica',
-    default: true,
+    default: false,
     group: 'chart',
   },
   scaleLimitMin: {
