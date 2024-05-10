@@ -27,7 +27,7 @@ export const visualOptions = {
   showLegend: {
     type: 'boolean',
     label: 'Show legend',
-    default: false,
+    default: true,
     group: 'artboard',
   },
 
