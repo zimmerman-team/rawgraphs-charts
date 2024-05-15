@@ -24,6 +24,13 @@ export const visualOptions = {
     group: 'artboard',
   },
 
+  showLegend: {
+    type: 'boolean',
+    label: 'Show legend',
+    default: true,
+    group: 'artboard',
+  },
+
   background: {
     type: 'color',
     label: 'Background',
