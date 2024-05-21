@@ -63,6 +63,12 @@ export const visualOptions = {
     default: true,
     group: 'Chart',
   },
+  realTimeSort:{
+    type: 'boolean',
+    label: 'Real time sort',
+    default: false,
+    group: 'Chart',
+  }
   // legend: {
   //   type: 'boolean',
   //   label: 'Show legend',
