@@ -32,6 +32,12 @@ export const visualOptions = {
     max: 20,
     group: 'chart',
   },
+  dataZoom: {
+    type: 'boolean',
+    label: 'Show Data Zoom',
+    default: false,
+    group: 'chart',
+  },
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',

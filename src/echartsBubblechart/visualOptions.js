@@ -27,7 +27,13 @@ export const visualOptions = {
     type: 'boolean',
     label: 'Show legend',
     default: false,
-    group: 'artboard',
+    group: 'chart',
+  },
+  dataZoom: {
+    type: 'boolean',
+    label: 'Show Data Zoom',
+    default: false,
+    group: 'chart',
   },
   showTooltip: {
     type: 'boolean',
@@ -35,6 +41,7 @@ export const visualOptions = {
     default: true,
     group: 'tooltip',
   },
+
   isMonetaryValue: {
     type: 'boolean',
     label: 'Is monetary value?',

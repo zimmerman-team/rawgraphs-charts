@@ -23,6 +23,12 @@ export const visualOptions = {
     default: 10,
     group: 'artboard',
   },
+  dataZoom: {
+    type: 'boolean',
+    label: 'Show Data Zoom',
+    default: false,
+    group: 'chart',
+  },
   lineType: {
     type: 'text',
     label: 'Line type',

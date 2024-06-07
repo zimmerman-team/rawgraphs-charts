@@ -63,12 +63,27 @@ export const visualOptions = {
     default: true,
     group: 'Chart',
   },
-  realTimeSort:{
+  realTimeSort: {
     type: 'boolean',
     label: 'Real time sort',
     default: false,
     group: 'Chart',
-  }
+  },
+  dataZoom: {
+    type: 'boolean',
+    label: 'Show Data Zoom',
+    default: false,
+    group: 'Chart',
+  },
+  barColor: {
+    type: 'color',
+    label: 'Bar Color',
+    group: 'color',
+    default: '#5470c6',
+    disabled: {
+      stack: true,
+    },
+  },
   // legend: {
   //   type: 'boolean',
   //   label: 'Show legend',
