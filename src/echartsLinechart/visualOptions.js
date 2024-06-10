@@ -58,6 +58,12 @@ export const visualOptions = {
     default: true,
     group: 'chart',
   },
+  dataZoom: {
+    type: 'boolean',
+    label: 'Show Data Zoom',
+    default: false,
+    group: 'chart',
+  },
   legendHoverLink: {
     type: 'boolean',
     label: 'Show legend hover link ',
