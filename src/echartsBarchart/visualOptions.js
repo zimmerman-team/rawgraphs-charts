@@ -23,11 +23,20 @@ export const visualOptions = {
     default: 10,
     group: 'artboard',
   },
+  autoBarWidth: {
+    type: 'boolean',
+    label: 'Auto bar width',
+    default: true,
+    group: 'Chart',
+  },
   barWidth: {
     type: 'number',
     label: 'Bar Width',
     default: 35,
     group: 'Chart',
+    disabled: {
+      autoBarWidth: true,
+    },
   },
   stack: {
     type: 'boolean',
@@ -72,7 +81,7 @@ export const visualOptions = {
   dataZoom: {
     type: 'boolean',
     label: 'Show Data Zoom',
-    default: false,
+    default: true,
     group: 'Chart',
   },
   barColor: {
