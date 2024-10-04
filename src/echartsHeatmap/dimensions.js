@@ -14,7 +14,7 @@ export const dimensions = [
   {
     id: 'size',
     name: 'Size',
-    validTypes: ['number'],
+    validTypes: ['number', 'date', 'string'],
     required: false,
   },
 ]
