@@ -11,7 +11,7 @@ export const dimensions = [
     id: 'size',
     name: 'Size',
     validTypes: ['number'],
-    required: false,
+    required: true,
     aggregation: true,
     aggregationDefault: 'sum',
   },
