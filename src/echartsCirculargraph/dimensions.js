@@ -1,18 +1,31 @@
 export const dimensions = [
   {
-    id: 'categories',
-    name: 'Categories',
+    id: 'node',
+    name: 'Node',
+    validTypes: ['number', 'date', 'string'],
+    required: true,
+  },
+
+  {
+    id: 'nodeSize',
+    name: 'Node Size',
+    validTypes: ['number'],
+    required: false,
+
+  },
+  {
+    id: 'link',
+    name: 'Links',
     validTypes: ['number', 'date', 'string'],
     required: true,
     multiple: true,
-    minValues: 2,
+    minValues: 1,
   },
   {
-    id: 'size',
-    name: 'Size',
-    validTypes: ['number'],
+    id: 'categories',
+    name: 'Categories',
+    validTypes: ['number', 'date', 'string'],
     required: false,
-    aggregation: true,
-    aggregationDefault: 'sum',
+  
   },
 ]

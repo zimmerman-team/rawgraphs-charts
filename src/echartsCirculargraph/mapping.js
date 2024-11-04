@@ -2,55 +2,48 @@ import * as d3 from 'd3'
 import { getDimensionAggregator } from '@rawgraphs/rawgraphs-core'
 
 export const mapData = function (data, mapping, dataTypes, dimensions) {
-  const sizeAggregator = getDimensionAggregator(
-    'size',
-    mapping,
-    dataTypes,
-    dimensions
-  )
-
   const links = []
   const nodes = []
-  const categories = mapping.categories.value.map((d) => ({ name: d }))
+  const categories = []
+  'categories' in mapping ? null : (mapping.categories = { value: undefined })
+  'nodeSize' in mapping ? null : (mapping.nodeSize = { value: undefined })
 
-  // compute the rollup for each couple of categories
-  // @TODO move this as grouping function
-  mapping.categories.value.slice(0, -1).forEach((category1, index) => {
-    //get the second step
-    const category2 = mapping.categories.value[index + 1]
+  d3.rollups(
+    data,
+    (v) => {
+      const category = mapping.categories.value
+        ? v[0][mapping.categories.value]
+        : undefined
 
-    const result = d3.rollups(
-      data,
-      (v) => {
-        const source = category1 + ' - ' + v[0][category1]
-        const target = category2 + ' - ' + v[0][category2]
-        const value = mapping.size.value
-          ? sizeAggregator(v.map((d) => d[mapping.size.value]))
-          : v.length
-
-        nodes.push(
-          {
-            id: source,
-            name: v[0][category1],
-            category: category1,
-            value: value,
-          },
-          {
-            id: target,
-            name: v[0][category2],
-            category: category2,
-            value: value,
-          }
-        )
-        const item = {
-          source,
-          target,
-          value,
+      v.forEach((d) => {
+        const node = {
+          id: d[mapping.node.value],
+          name: d[mapping.node.value],
+          value: d[mapping.nodeSize.value],
+          category,
+          data: d,
         }
-        links.push(item)
-        return item
+        nodes.push(node)
+      })
+      if (category) {
+        categories.push({ name: category })
+      }
+    },
+    (d) => (mapping.categories?.value ? d[mapping.categories.value] : undefined)
+  )
+
+  mapping.link.value.forEach((link) => {
+    d3.rollups(
+      nodes,
+      (v) => {
+        if (v.length > 1) {
+          const representative = v[0]
+          for (let i = 1; i < v.length; i++) {
+            links.push({ source: representative.id, target: v[i].id })
+          }
+        }
       },
-      (d) => d[category1] + '_' + d[category2]
+      (d) => d.data[link]
     )
   })
 
