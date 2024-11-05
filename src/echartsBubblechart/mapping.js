@@ -3,7 +3,7 @@ import { getDimensionAggregator } from '@rawgraphs/rawgraphs-core'
 
 export const mapData = function (data, mapping, dataTypes, dimensions) {
   // add the non-compulsory dimensions.
-  'color' in mapping ? null : (mapping.color = { value: undefined })
+
   'size' in mapping ? null : (mapping.size = { value: undefined })
   'label' in mapping ? null : (mapping.label = { value: undefined })
 
@@ -12,20 +12,20 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
   d3.rollups(
     data,
     (v) => {
-      const color = mapping.color.value ? v[0][mapping.color.value] : 'All' // Getting the first one since it's grouped
-      const colorGroup = v.map((d) => ({
+      const label = mapping.label.value ? v[0][mapping.label.value] : 'All' // Getting the first one since it's grouped
+      const labelGroup = v.map((d) => ({
         x: d[mapping.x.value],
         y: d[mapping.y.value],
         size: mapping.size.value ? d[mapping.size.value] : v.length,
-        color,
         label: mapping.label.value ? d[mapping.label.value] : undefined,
       }))
-      results[color] = colorGroup
-      return colorGroup
+      results[label] = labelGroup
+      return labelGroup
     },
     (d) =>
-      mapping.color.value ? d[mapping.color.value]?.toString() : undefined // color grouping. toString() to enable grouping on dates
+      mapping.label.value ? d[mapping.label.value]?.toString() : undefined // color grouping. toString() to enable grouping on dates
   )
 
   return results
 }
+

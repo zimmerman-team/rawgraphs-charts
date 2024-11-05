@@ -3,7 +3,7 @@ export const dimensions = [
     id: 'x',
     name: 'X Axis',
     operation: 'get',
-    validTypes: ['date'],
+    validTypes: ['number','date'],
     required: true,
   },
   {

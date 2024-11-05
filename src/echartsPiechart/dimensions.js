@@ -1,11 +1,16 @@
 export const dimensions = [
   {
-    id: 'arcs',
-    name: 'Arcs',
+    id: 'category',
+    name: 'Category',
+    validTypes: ["number", "string", "date"],
+    required: true,
+
+  },
+  {
+    id: 'value',
+    name: 'Value',
     validTypes: ['number'],
     required: true,
-    multiple: true,
-    operation: 'get',
     aggregation: true,
     aggregationDefault: {
       number: 'sum',

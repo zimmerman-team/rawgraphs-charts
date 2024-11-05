@@ -17,12 +17,7 @@ export const dimensions = [
     validTypes: ['number'],
     required: false,
   },
-  {
-    id: 'color',
-    name: 'Color',
-    validTypes: ['number', 'date', 'string'],
-    required: false,
-  },
+
   {
     id: 'label',
     name: 'Label',

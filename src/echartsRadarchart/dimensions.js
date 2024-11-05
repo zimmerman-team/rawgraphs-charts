@@ -1,15 +1,15 @@
 export const dimensions = [
   {
-    id: 'axes',
-    name: 'Spokes',
+    id: 'dimensions',
+    name: 'Dimensions',
     validTypes: ['number'],
     required: true,
     multiple: true,
     minValues: 3,
   },
   {
-    id: 'color',
-    name: 'Color',
+    id: 'category',
+    name: 'Category',
     operation: 'get',
     validTypes: ['number', 'string', 'date'],
     required: false,
