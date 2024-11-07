@@ -7,19 +7,19 @@ export const dimensions = [
   },
 
   {
-    id: 'nodeSize',
-    name: 'Node Size',
-    validTypes: ['number'],
-    required: false,
-
-  },
-  {
     id: 'link',
     name: 'Links',
     validTypes: ['number', 'date', 'string'],
     required: true,
     multiple: true,
     minValues: 1,
+  },
+  {
+    id: 'nodeSize',
+    name: 'Node Size',
+    validTypes: ['number'],
+    required: false,
+
   },
   {
     id: 'categories',
