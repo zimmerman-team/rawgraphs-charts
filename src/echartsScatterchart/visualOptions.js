@@ -38,6 +38,20 @@ export const visualOptions = {
     default: false,
     group: 'chart',
   },
+  trendline: {
+    type: 'text',
+    label: 'Trendline',
+    default: 'None',
+    group: 'chart',
+    options: [
+      "None",
+      "Exponential",
+      "Linear",
+      "Logarithmic",
+      "Polynomial",
+      
+    ],
+  },
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',
