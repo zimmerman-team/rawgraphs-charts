@@ -84,6 +84,12 @@ export const visualOptions = {
     default: true,
     group: 'Chart',
   },
+  logarithmicYAxis: {
+    type: 'boolean',
+    label: 'Logarithmic Y Axis',
+    default: false,
+    group: 'Chart',
+  },
   barColor: {
     type: 'color',
     label: 'Bar Color',
