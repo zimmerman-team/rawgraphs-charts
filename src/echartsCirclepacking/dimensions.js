@@ -5,6 +5,8 @@ export const dimensions = [
     validTypes: ['number', 'date', 'string'],
     required: true,
     multiple: true,
+    description:
+      'Shows the nested structure of categories and how groups relate. This hierarchy defines the arrangement of circles in the chart.',
   },
   {
     id: 'size',
@@ -13,5 +15,7 @@ export const dimensions = [
     required: false,
     aggregation: true,
     aggregationDefault: 'sum',
+    description:
+      'Quantitative value for each category. Circle size reflects value, with larger circles indicating greater quantities.',
   },
 ]
