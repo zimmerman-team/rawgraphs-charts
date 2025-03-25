@@ -5,6 +5,8 @@ export const dimensions = [
     validTypes: ['number', 'string', 'date'],
     required: true,
     operation: 'get',
+    description:
+      'The different categories or subgroups represented by each bar in the bar chart.',
   },
   {
     id: 'size',
@@ -14,5 +16,7 @@ export const dimensions = [
     required: false,
     aggregation: true,
     aggregationDefault: 'sum',
+    description:
+      'The values corresponding to each category that determine the height or length of the column.',
   },
 ]

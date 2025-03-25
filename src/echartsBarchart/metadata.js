@@ -7,4 +7,9 @@ export const metadata = {
   description: 'An empty chart to bootstrap new ones',
   // code: 'https://github.com/rawgraphs',
   // tutorial: 'https://rawgraphs.io/learning/',
+  suitableFor: [
+    'Categorical data',
+    'Discrete Data',
+    'Small number of categories',
+  ],
 }
