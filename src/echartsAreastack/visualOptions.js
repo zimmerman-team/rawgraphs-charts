@@ -33,8 +33,6 @@ export const visualOptions = {
     type: 'text',
     label: 'Line type',
     group: 'chart',
-    // default: 1,
-    // min: 1,
     options: ['solid', 'dotted', 'dashed'],
     default: 'solid',
   },

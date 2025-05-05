@@ -38,15 +38,7 @@ export const visualOptions = {
     max: 1,
     group: 'chart',
   },
-  nodeSize: {
-    type: 'number',
-    label: 'Node symbol size (0-20)',
-    default: 10,
-    step: 1,
-    min: 0,
-    max: 20,
-    group: 'chart',
-  },
+
   forceRepulsion: {
     type: 'number',
     label: 'Force Repulsion (10-100)',

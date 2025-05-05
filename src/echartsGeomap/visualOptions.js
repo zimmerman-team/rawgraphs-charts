@@ -31,13 +31,6 @@ export const visualOptions = {
     group: 'artboard',
   },
 
-  background: {
-    type: 'color',
-    label: 'Background',
-    default: '#FEFEFE',
-    group: 'artboard',
-  },
-
   roam: {
     type: 'text',
     label: 'Roam',

@@ -27,7 +27,6 @@ export const visualOptions = {
     type: 'text',
     label: 'Line type',
     group: 'chart',
-    // default: 1,
     // min: 1,
     options: ['solid', 'dotted', 'dashed'],
     default: 'solid',
@@ -64,15 +63,7 @@ export const visualOptions = {
     default: false,
     group: 'chart',
   },
-  legendHoverLink: {
-    type: 'boolean',
-    label: 'Show legend hover link ',
-    default: false,
-    group: 'chart',
-    disabled: {
-      legend: false,
-    },
-  },
+
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',
