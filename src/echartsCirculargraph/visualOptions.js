@@ -57,8 +57,8 @@ export const visualOptions = {
     type: 'text',
     label: 'Show node labels',
     group: 'labels',
-    options: ['false', 'largeNodes', 'true'],
-    default: 'largeNodes',
+    options: ['false',  'true'],
+    default: 'true',
   },
   labelFontSize: {
     type: 'number',
