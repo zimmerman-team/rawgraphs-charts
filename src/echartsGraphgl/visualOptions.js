@@ -23,12 +23,6 @@ export const visualOptions = {
     default: 0,
     group: 'artboard',
   },
-  showLegend: {
-    type: 'boolean',
-    label: 'Show legend',
-    default: false,
-    group: 'artboard',
-  },
   opacity: {
     type: 'number',
     label: 'Opacity (0-1)',

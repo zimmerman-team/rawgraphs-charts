@@ -1,28 +1,25 @@
+import { max, min } from "d3";
+
 export const visualOptions = {
-  marginTop: {
+
+  centerX:{
     type: 'number',
-    label: 'Margin (top)',
-    default: 0,
+    label: 'Center X-axis (%)',
+    default: 50,
     group: 'artboard',
+    max: 100,
+    min: 0,
   },
-  marginRight: {
+  centerY:{
     type: 'number',
-    label: 'Margin (right)',
-    default: 0,
+    label: 'Center Y-axis (%)',
+    default: 50,
     group: 'artboard',
+    max: 100,
+    min: 0,
+
   },
-  marginBottom: {
-    type: 'number',
-    label: 'Margin (bottom)',
-    default: 0,
-    group: 'artboard',
-  },
-  marginLeft: {
-    type: 'number',
-    label: 'Margin (left)',
-    default: 0,
-    group: 'artboard',
-  },
+
   showLabels: {
     type: 'text',
     label: 'Show labels',

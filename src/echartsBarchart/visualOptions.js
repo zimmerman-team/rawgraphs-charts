@@ -38,19 +38,7 @@ export const visualOptions = {
       autoBarWidth: true,
     },
   },
-  stack: {
-    type: 'boolean',
-    label: 'Stack lines',
-    default: false,
-    group: 'Chart',
-  },
-  // orientation: {
-  //   type: 'text',
-  //   label: 'Orientation',
-  //   group: 'chart',
-  //   options: ['horizontal', 'vertical'],
-  //   default: 'vertical',
-  // },
+
   showTooltip: {
     type: 'boolean',
     label: 'Show tooltip',
