@@ -3,7 +3,7 @@ export const dimensions = [
     id: 'x',
     name: 'X Axis',
     operation: 'get',
-    validTypes: ['number', 'date'],
+    validTypes: ['number', 'string', 'date'],
     required: true,
     description:
       'The X axis shows the independent variable, like time or categories, positioning data points horizontally.',
