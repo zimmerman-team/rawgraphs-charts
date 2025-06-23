@@ -85,4 +85,10 @@ export const visualOptions = {
     default: false,
     group: 'Label',
   },
+  palette: {
+    type: 'radioGroup',
+    label: 'TGF Default',
+    group: 'Color palette',
+    default: 'TGF Default',
+  },
 }
