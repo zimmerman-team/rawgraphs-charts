@@ -57,7 +57,7 @@ export const visualOptions = {
     type: 'text',
     label: 'Show node labels',
     group: 'labels',
-    options: ['false',  'true'],
+    options: ['false', 'true'],
     default: 'true',
   },
   labelFontSize: {
@@ -95,8 +95,8 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'TGF Default',
+    label: 'DataXplorer default',
     group: 'Color palette',
-    default: 'TGF Default',
+    default: 'DataXplorer default',
   },
 }

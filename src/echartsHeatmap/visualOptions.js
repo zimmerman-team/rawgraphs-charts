@@ -55,8 +55,8 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'TGF Default',
+    label: 'DataXplorer default',
     group: 'Color palette',
-    default: 'TGF Default',
+    default: 'DataXplorer default',
   },
 }

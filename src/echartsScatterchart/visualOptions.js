@@ -43,14 +43,7 @@ export const visualOptions = {
     label: 'Trendline',
     default: 'None',
     group: 'chart',
-    options: [
-      "None",
-      "Exponential",
-      "Linear",
-      "Logarithmic",
-      "Polynomial",
-      
-    ],
+    options: ['None', 'Exponential', 'Linear', 'Logarithmic', 'Polynomial'],
   },
   showTooltip: {
     type: 'boolean',
@@ -69,8 +62,8 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'TGF Default',
+    label: 'DataXplorer default',
     group: 'Color palette',
-    default: 'TGF Default',
+    default: 'DataXplorer default',
   },
 }
