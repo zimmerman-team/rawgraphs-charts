@@ -1,8 +1,7 @@
-import { max, min } from "d3";
+import { max, min } from 'd3'
 
 export const visualOptions = {
-
-  centerX:{
+  centerX: {
     type: 'number',
     label: 'Center X-axis (%)',
     default: 50,
@@ -10,14 +9,13 @@ export const visualOptions = {
     max: 100,
     min: 0,
   },
-  centerY:{
+  centerY: {
     type: 'number',
     label: 'Center Y-axis (%)',
     default: 50,
     group: 'artboard',
     max: 100,
     min: 0,
-
   },
 
   showLabels: {
@@ -60,9 +58,9 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'TGF Default',
+    label: 'DataXplorer default',
     group: 'Color palette',
-    default: 'TGF Default',
+    default: 'DataXplorer default',
   },
   borderWidth: {
     type: 'number',
