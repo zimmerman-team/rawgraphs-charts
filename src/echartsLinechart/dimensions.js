@@ -11,21 +11,13 @@ export const dimensions = [
   {
     id: 'y',
     name: 'Y Axis',
-    operation: 'get',
-    validTypes: ['number', 'date'],
+    validTypes: ['number'],
     required: true,
+    multiple: true,
+    operation: 'get',
     aggregation: true,
     aggregationDefault: 'sum',
     description:
       'Y axis shows the dependent variable values on the vertical axis, changing with the X axis.',
-  },
-  {
-    id: 'lines',
-    name: 'Lines',
-    validTypes: ['number', 'string', 'date'],
-    required: false,
-    operation: 'get',
-    description:
-      'The line shows trends or relationships between data points. In multi-series charts, different lines represent multiple datasets.',
   },
 ]

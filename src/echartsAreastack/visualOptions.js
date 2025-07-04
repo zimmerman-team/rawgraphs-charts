@@ -89,7 +89,7 @@ export const visualOptions = {
   label: {
     type: 'boolean',
     label: 'Show label',
-    default: false,
+    default: true,
     group: 'Label',
   },
   palette: {

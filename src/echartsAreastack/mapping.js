@@ -1,10 +1,6 @@
 import * as d3 from 'd3'
 import { getDimensionAggregator } from '@rawgraphs/rawgraphs-core'
 
-function uniq(value, index, self) {
-  return self.indexOf(value) === index
-}
-
 export const mapData = function (data, mapping, dataTypes, dimensions) {
   const yAggregator = getDimensionAggregator(
     'y',
@@ -13,43 +9,51 @@ export const mapData = function (data, mapping, dataTypes, dimensions) {
     dimensions
   )
 
-  // add the non-compulsory dimensions.
-  'series' in mapping ? null : (mapping.series = { value: undefined })
-  'lines' in mapping ? null : (mapping.lines = { value: undefined })
-
   let results = []
 
-  d3.rollups(
+  // Group data by x-axis values and process each group
+  const groupedData = d3.rollups(
     data,
-    (v) =>
-      d3.rollups(
-        v,
-        (vv) => {
-          const item = {
-            x: vv[0][mapping.x.value], //get the first one since it's grouped
-            y: yAggregator(vv.map((d) => d[mapping.y.value])), // aggregate
-            lines: vv[0][mapping.lines.value], //get the first one since it's grouped
-          }
-          results.push(item)
-        },
-        (d) => d[mapping.x.value].toString() // sub-group functions. toString() to enable grouping on dates
-      ),
-    // (d) => d[mapping.series.value], // series grouping
-    (d) => d[mapping.lines.value] // group functions
+    (v) => {
+      // For each y-dimension, create an aggregated item
+      mapping.y.value.forEach((yName, i) => {
+        const valuesForY = v.map((x) => x[yName])
+        const aggregator = yAggregator[i]
+
+        const item = {
+          x: v[0][mapping.x.value], // x-axis value (same for all in group)
+          y: yName, // y-series name
+          yValue: aggregator(valuesForY), // aggregated value
+        }
+        results.push(item)
+      })
+      return v // Return the group for potential future use
+    },
+    (d) => d[mapping.x.value].toString() // Group by x-axis value
   )
 
-  // create nest structure
-  const nestedData = d3.rollups(
+  // Create nested structure for series
+  const nestedData = []
+  d3.rollups(
     results,
-    (v) => v.sort((a, b) => d3.ascending(a.x, b.x)),
-    (d) => d.lines
+    (v) => {
+      // Create values object with x-axis values as keys
+      let valuesObj = {}
+      v.forEach((d) => {
+        valuesObj[d.x] = d.yValue
+      })
+
+      const item = {
+        name: v[0].y, // Series name
+        values: valuesObj, // Object with x-axis values as keys
+      }
+      nestedData.push(item)
+    },
+    (d) => d.y // Group by y-series name
   )
 
   return {
-    xAxisValues: results
-      .map((d) => d.x)
-      .filter(uniq)
-      .sort((a, b) => a - b),
-    lines: nestedData,
+    xAxisValues: groupedData.map((m) => m[0]), // Extract x-axis values
+    series: nestedData,
   }
 }
