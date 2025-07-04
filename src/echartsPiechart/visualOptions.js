@@ -68,6 +68,31 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
+  showLabel: {
+    type: 'boolean',
+    label: 'Show label',
+    default: false,
+    group: 'Label',
+  },
+  labelPosition: {
+    type: 'text',
+    label: 'Label position',
+    options: ['outside', 'inside', 'center'],
+    default: 'right',
+    group: 'Label',
+    disabled: {
+      showLabel: false,
+    },
+  },
+  labelFontSize: {
+    type: 'number',
+    label: 'Label font size',
+    default: 12,
+    group: 'Label',
+    disabled: {
+      showLabel: false,
+    },
+  },
   palette: {
     type: 'radioGroup',
     label: 'DataXplorer default',
