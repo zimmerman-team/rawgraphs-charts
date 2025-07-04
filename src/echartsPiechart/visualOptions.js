@@ -71,7 +71,7 @@ export const visualOptions = {
   showLabel: {
     type: 'boolean',
     label: 'Show label',
-    default: false,
+    default: true,
     group: 'Label',
   },
   labelPosition: {
