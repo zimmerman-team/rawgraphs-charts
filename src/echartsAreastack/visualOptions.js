@@ -44,6 +44,12 @@ export const visualOptions = {
     min: 1,
     // max: 3,
   },
+  smoothLine: {
+    type: 'boolean',
+    label: 'Smooth line',
+    default: false,
+    group: 'chart',
+  },
   // stack: {
   //   type: 'boolean',
   //   label: 'Stack lines',
@@ -97,5 +103,20 @@ export const visualOptions = {
     label: 'DataXplorer default',
     group: 'Color palette',
     default: 'DataXplorer default',
+  },
+  customYAxisName: {
+    type: 'boolean',
+    label: 'Custom Y Axis Name',
+    default: false,
+    group: 'Y Axis',
+  },
+  yAxisName: {
+    type: 'text',
+    label: 'Y Axis Name',
+    default: '',
+    group: 'Y Axis',
+    disabled: {
+      customYAxisName: false,
+    },
   },
 }

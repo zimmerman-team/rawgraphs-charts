@@ -2,7 +2,7 @@ export const visualOptions = {
   marginTop: {
     type: 'number',
     label: 'Margin (top)',
-    default: 10,
+    default: 30,
     group: 'artboard',
   },
   marginRight: {
@@ -41,7 +41,7 @@ export const visualOptions = {
   showLabels: {
     type: 'boolean',
     label: 'Show label',
-    default: false,
+    default: true,
     group: 'labels',
   },
   labelFontSize: {
@@ -58,5 +58,20 @@ export const visualOptions = {
     label: 'DataXplorer default',
     group: 'Color palette',
     default: 'DataXplorer default',
+  },
+  customYAxisName: {
+    type: 'boolean',
+    label: 'Custom Y Axis Name',
+    default: false,
+    group: 'Y Axis',
+  },
+  yAxisName: {
+    type: 'text',
+    label: 'Y Axis Name',
+    default: '',
+    group: 'Y Axis',
+    disabled: {
+      customYAxisName: false,
+    },
   },
 }

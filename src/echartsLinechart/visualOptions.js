@@ -39,6 +39,12 @@ export const visualOptions = {
     min: 1,
     // max: 3,
   },
+  smoothLine: {
+    type: 'boolean',
+    label: 'Smooth line',
+    default: false,
+    group: 'chart',
+  },
   // stack: {
   //   type: 'boolean',
   //   label: 'Stack lines',
@@ -79,16 +85,25 @@ export const visualOptions = {
       showTooltip: false,
     },
   },
-  label: {
-    type: 'boolean',
-    label: 'Show label',
-    default: false,
-    group: 'Label',
-  },
   palette: {
     type: 'radioGroup',
     label: 'TGF Default',
     group: 'Color palette',
     default: 'TGF Default',
+  },
+  customYAxisName: {
+    type: 'boolean',
+    label: 'Custom Y Axis Name',
+    default: false,
+    group: 'Y Axis',
+  },
+  yAxisName: {
+    type: 'text',
+    label: 'Y Axis Name',
+    default: '',
+    group: 'Y Axis',
+    disabled: {
+      customYAxisName: false,
+    },
   },
 }
