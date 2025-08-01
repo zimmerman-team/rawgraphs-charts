@@ -89,4 +89,19 @@ export const visualOptions = {
     group: 'Color palette',
     default: 'DataXplorer default',
   },
+  customYAxisName: {
+    type: 'boolean',
+    label: 'Custom Y Axis Name',
+    default: false,
+    group: 'Y Axis',
+  },
+  yAxisName: {
+    type: 'text',
+    label: 'Y Axis Name',
+    default: '',
+    group: 'Y Axis',
+    disabled: {
+      customYAxisName: false,
+    },
+  },
 }

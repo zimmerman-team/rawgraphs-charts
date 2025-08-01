@@ -87,20 +87,19 @@ export const visualOptions = {
       stack: true,
     },
   },
-  // legend: {
-  //   type: 'boolean',
-  //   label: 'Show legend',
-  //   default: false,
-  //   group: 'Chart',
-  // },
-
-  // legendHoverLink: {
-  //   type: 'boolean',
-  //   label: 'Show legend hover link ',
-  //   default: false,
-  //   group: 'Chart',
-  //   disabled: {
-  //     legend: false,
-  //   },
-  // },
+  customYAxisName: {
+    type: 'boolean',
+    label: 'Custom Y Axis Name',
+    default: false,
+    group: 'Y Axis',
+  },
+  yAxisName: {
+    type: 'text',
+    label: 'Y Axis Name',
+    default: '',
+    group: 'Y Axis',
+    disabled: {
+      customYAxisName: false,
+    },
+  },
 }
