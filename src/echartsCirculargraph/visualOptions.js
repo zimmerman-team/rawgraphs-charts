@@ -95,8 +95,8 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'DataXplorer',
+    label: 'Dataxplorer',
     group: 'Color palette',
-    default: 'DataXplorer',
+    default: 'Dataxplorer',
   },
 }
