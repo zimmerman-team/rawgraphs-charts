@@ -100,9 +100,9 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'DataXplorer default',
+    label: 'DataXplorer',
     group: 'Color palette',
-    default: 'DataXplorer default',
+    default: 'DataXplorer',
   },
   customYAxisName: {
     type: 'boolean',
