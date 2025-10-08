@@ -47,8 +47,8 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'DataXplorer default',
+    label: 'Dataxplorer',
     group: 'Color palette',
-    default: 'DataXplorer default',
+    default: 'Dataxplorer',
   },
 }
