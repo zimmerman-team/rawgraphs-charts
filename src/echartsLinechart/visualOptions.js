@@ -87,9 +87,9 @@ export const visualOptions = {
   },
   palette: {
     type: 'radioGroup',
-    label: 'TGF Default',
+    label: 'Dataxplorer',
     group: 'Color palette',
-    default: 'TGF Default',
+    default: 'Dataxplorer',
   },
   customYAxisName: {
     type: 'boolean',
