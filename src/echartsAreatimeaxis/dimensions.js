@@ -3,7 +3,7 @@ export const dimensions = [
     id: 'x',
     name: 'X Axis',
     operation: 'get',
-    validTypes: ['number', 'date'],
+    validTypes: ['date'],
     required: true,
     description:
       'Represents the time dimension, showing the progression or sequence over time.',
@@ -12,8 +12,9 @@ export const dimensions = [
     id: 'y',
     name: 'Y Axis',
     operation: 'get',
-    validTypes: ['number', 'date'],
+    validTypes: ['number'],
     required: true,
+    multiple: true,
     aggregation: true,
     aggregationDefault: 'sum',
     description:
