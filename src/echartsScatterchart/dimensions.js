@@ -17,4 +17,12 @@ export const dimensions = [
     description:
       'Represents the dependent variable or output data. It determines the vertical position of each point on the chart.',
   },
+  {
+    id: 'color',
+    name: 'Color',
+    validTypes: ['string', 'number', 'date'],
+    required: false,
+    description:
+      'Defines the color of each point based on its value. Different values can be represented by different colors to enhance visual distinction.',
+  },
 ]
