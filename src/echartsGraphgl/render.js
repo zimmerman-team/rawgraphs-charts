@@ -1,9 +1,8 @@
 import * as echarts from 'echarts/core'
-import { GraphGLChart } from 'echarts-gl/charts'
 import { SVGRenderer } from 'echarts/renderers'
 import { TooltipComponent } from 'echarts/components'
 
-echarts.use([TooltipComponent, GraphGLChart, SVGRenderer])
+echarts.use([TooltipComponent, SVGRenderer])
 
 function uniq(value, index, self) {
   return self.indexOf(value) === index
