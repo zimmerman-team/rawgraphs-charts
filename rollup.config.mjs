@@ -1,17 +1,19 @@
 import babel from '@rollup/plugin-babel'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import localResolve from 'rollup-plugin-local-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import image from '@rollup/plugin-image'
 import { string } from 'rollup-plugin-string'
-import { rawGraphCss } from './bundler/rollupPluginRAWGraphCss'
-import pkg from './package.json'
+import { rawGraphCss } from './bundler/rollupPluginRAWGraphCss.js'
+import { createRequire } from 'module'
+
+const pkg = createRequire(import.meta.url)('./package.json')
 
 const vendors = []
   // Make all external dependencies to be exclude from rollup
   .concat(
-    Object.keys(pkg.dependencies || {}), // TODO: keep or not?
+    Object.keys(pkg.dependencies || {}),
     Object.keys(pkg.peerDependencies || {}),
     Object.keys(pkg.devDependencies || {})
   )
@@ -45,7 +47,6 @@ export default ['esm', 'cjs', 'umd'].map((format) => ({
     image(),
     babel({
       exclude: 'node_modules/**',
-      // TODO: Maybe check this
       babelHelpers: 'bundled',
     }),
     rawGraphCss({
@@ -55,12 +56,5 @@ export default ['esm', 'cjs', 'umd'].map((format) => ({
       include: '**/styles/*.css',
       exclude: '**/styles/*.raw.css',
     }),
-  ].concat(
-    format == 'umd'
-      ? [
-          resolve(),
-          terser()
-        ]
-      : []
-  ),
+  ].concat(format == 'umd' ? [resolve(), terser()] : []),
 }))
